@@ -1,0 +1,147 @@
+body {
+    font-family: '微軟黑體', sans-serif;
+    background-color: #fff; /* 這行可以保留，如果希望背景是純白的 */
+    color: #000;
+    text-align: center;
+    margin: 0; /* 確保整體頁面沒有外部間距 */
+    height: 100vh; /* 使 body 的高度填滿整個視窗 */
+    width: 100vw; /* 使 body 的寬度填滿整個視窗 */
+    background-image: url('images/backC.svg'); /* 預設背景圖片 */
+    background-size: cover; /* 背景圖片填滿整個視窗，不保持比例 */
+    background-position: center; /* 背景圖片居中 */
+    background-repeat: no-repeat; /* 不重複背景圖片 */
+}
+
+.container {
+    margin: 0; /* 設為 0 確保容器沒有外部間距 */
+}
+
+/* 設定容器的邊距 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列 */
+    gap: 0; /* 確保圖片之間的間距設為 0 */
+    margin: 40px calc(50vw - 250px); /* 電腦版外邊距，動態計算 */
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* 確保每個項目不會有外部間距 */
+}
+
+.grid-item img {
+    width: 100%; /* 確保圖片佔滿 grid-item 的寬度 */
+    height: auto; /* 保持圖片的比例 */
+    object-fit: cover; /* 確保圖片按比例填滿容器 */
+    display: block; /* 確保圖片不會有下方空間 */
+    margin: 0; /* 確保圖片不會有外部間距 */
+}
+
+h1, p {
+    font-weight: bold; /* 加粗文字 */
+}
+
+/* 手機和平板版的邊距設置 */
+@media (max-width: 768px) {
+    .grid {
+        margin: 40px ; /* 平板和手機版外邊距，動態計算 */
+        background-image: url('images/backP.svg'); /* 手機版背景圖片 */
+    }
+}
+
+/* 針對平板和手機版再進一步細分 */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .grid {
+        margin: 40px calc(19vw - 15px); /* 平板外邊距，動態計算 */
+        background-image: url('images/backT.svg'); /* 平板版背景圖片 */
+    }
+}
+
+.btn {
+    background-color: #ffbf3f; /* 按鈕顏色 */
+    color: #000; /* 按鈕文字顏色 */
+    font-weight: bold; /* 按鈕文字加粗 */
+    padding: 12px 20px; /* 調整按鈕內邊距 */
+    text-decoration: none;
+    border-radius: 12px; /* 圓角按鈕 */
+    display: inline-block;
+    border: 2px solid #000; /* 加入黑色邊框 */
+    transition: background-color 0.3s, box-shadow 0.3s; /* 過渡效果 */
+}
+
+.btn:hover {
+    background-color: #ffc700; /* 鼠標懸停顏色 */
+    color: #ffffff; /* 懸停時文字顏色 */
+    box-shadow: 0px 4px 20px rgba(255, 191, 63, 0.5); /* 懸停效果 */
+}
+
+/* 更新首頁樣式 */
+.welcome-text {
+    color: #FFBF3F; /* 白色文字 */
+    text-shadow: 1px 1px 0 black; /* 黑色描邊 */
+    font-weight: bold; /* 粗體 */
+    font-size: 1.5rem; /* 調整大小 */
+    margin-bottom: 20px; /* 標題底部間距 */
+}
+
+.email-prompt {
+    color: white; /* 白色文字 */
+    text-shadow: 1px 1px 0 black; /* 黑色描邊 */
+    font-weight: bold; /* 粗體 */
+    font-size: 2rem; /* 放大兩倍 */
+    margin-bottom: 20px; /* 加一些底部間距 */
+}
+
+.input-box {
+    color: white; /* 輸入框內文字顏色 */
+    font-size: 2rem; /* 放大兩倍 */
+    font-weight: bold; /* 粗體 */
+    background-color: transparent; /* 背景透明以便顯示背景 */
+    border: 1px solid white; /* 白色邊框 */
+    padding: 10px; /* 內部間距 */
+    border-radius: 8px; /* 圓角 */
+    margin-bottom: 20px; /* 加一些底部間距 */
+}
+
+/*更新錯誤樣式*/
+.error-title {
+    color: red; /* 錯誤標題的顏色 */
+text-shadow: 1px 1px 0 black; /* 黑色描邊 */
+    font-weight: bold; /* 粗體 */
+    font-size: 2rem; /* 調整大小 */
+    margin-bottom: 20px; /* 標題底部間距 */
+}
+
+.error-message {
+    color: white; /* 錯誤訊息的顏色 */
+    font-size: 1.5rem; /* 調整大小 */
+    margin-bottom: 20px; /* 訊息底部間距 */
+}
+/*更新成功樣式*/
+.result-title {
+    color: #FFBF3F; /* 標題顏色 */
+    font-weight: bold; /* 粗體 */
+text-shadow: 1px 1px 0 black; /* 黑色描邊 */
+    font-size: 1.5rem; /* 調整大小 */
+    margin-bottom: -1px; /* 標題底部間距 */
+    text-align: center; /* 標題置中 */
+}
+
+.member-greeting {
+    color: white; /* 顏色 */
+text-shadow: 1px 1px 0 black; /* 黑色描邊 */
+    font-size: 1.5rem; /* 調整大小 */
+    margin-bottom: 5px; /* 訊息底部間距 */
+    text-align: center; /* 訊息置中 */
+}
+
+.completed-lines {
+    color: white; /* 顏色 */
+text-shadow: 1px 1px 0 black; /* 黑色描邊 */
+    font-size: 1.5rem; /* 調整大小 */
+    margin-bottom: 20px; /* 訊息底部間距 */
+    text-align: center; /* 訊息置中 */
+}
+

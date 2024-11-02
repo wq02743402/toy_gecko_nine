@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查詢結果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 class="result-title">查詢結果</h1> <!-- 添加類別 -->
+    <div class="grid">
+        {% for row in images %}
+            {% for img in row %}
+                <div class="grid-item">
+                    <img src="{{ url_for('static', filename='images/' + img) }}" alt="Image">
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="result">
+        <p class="member-greeting">會員名稱： {{ member_name }}</p> <!-- 添加類別 -->
+        <p class="completed-lines">您總共完成：{{ completed_lines }} 條線</p> <!-- 添加類別 -->
+    </div>
+    <a class="btn" href="/">返回首頁</a> <!-- 確保這裡有 btn 類別 -->
+</body>
+</html>

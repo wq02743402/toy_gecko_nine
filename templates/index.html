@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 class="title welcome-text">歡迎使用給庫九周年宮格活動查詢系統</h1>
+    <form action="/submit" method="post" class="form-container">
+        <label for="email" class="email-prompt">請輸入您的電子信箱：</label>
+        <br>
+<br>
+        <input type="email" id="email" name="email" class="input-box" required placeholder="您的電子信箱">
+        <br>
+        <button type="submit" class="btn">查詢</button>
+    </form>
+</body>
+</html>
