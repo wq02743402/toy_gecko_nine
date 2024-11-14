@@ -1,0 +1,14 @@
+runtime: python310  # 使用 Python 3.10 環境
+
+entrypoint: gunicorn -b :$PORT app:app  # 使用 gunicorn 啟動 Flask 應用
+
+instance_class: F2  # 可選，設定實例類型，根據需求可以調整
+
+env_variables:
+  EXCEL_FILE_PATH: "static/九周年資料.xlsx"  # 使用 static 資料夾中的 Excel 檔案
+
+handlers:
+  - url: /static
+    static_dir: static/  # 靜態文件的處理
+  - url: /.*
+    script: auto  # 其他請求交給 Flask 處理
